@@ -7,10 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SimpleBorrowersRepository implements BorrowersRepository {
-    private static final List<Borrower> BORROWERS;
+    private static final List<Borrower> BORROWERS = new ArrayList<>();
 
     static {
-        BORROWERS = new ArrayList<>();
         BORROWERS.add(new BorrowerEntity("Maciej"));
         BORROWERS.add(new BorrowerEntity("Wioletta"));
     }
