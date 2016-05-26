@@ -5,8 +5,20 @@ import io.github.maciejbiela.designpatternsproject.core.model.Item;
 
 import java.util.List;
 
-public interface BorrowItemsRequest {
-    Borrower getBorrower();
+public class BorrowItemsRequest {
+    private final Borrower borrower;
+    private final List<Item> items;
 
-    List<Item> getItems();
+    public BorrowItemsRequest(Borrower borrower, List<Item> items) {
+        this.borrower = borrower;
+        this.items = items;
+    }
+
+    public Borrower getBorrower() {
+        return borrower;
+    }
+
+    public List<Item> getItems() {
+        return items;
+    }
 }

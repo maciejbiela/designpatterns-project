@@ -14,14 +14,16 @@ public class BorrowItemsUseCase {
     private final BorrowersRepository borrowersRepository;
     private final BorrowsRepository borrowsRepository;
     private final ItemsRepository itemsRepository;
+    private final BorrowItemsRequestValidator validator;
 
-    public BorrowItemsUseCase(BorrowersRepository borrowersRepository, BorrowsRepository borrowsRepository, ItemsRepository itemsRepository) {
+    public BorrowItemsUseCase(BorrowersRepository borrowersRepository, BorrowsRepository borrowsRepository, ItemsRepository itemsRepository, BorrowItemsRequestValidator validator) {
         this.borrowersRepository = borrowersRepository;
         this.borrowsRepository = borrowsRepository;
         this.itemsRepository = itemsRepository;
+        this.validator = validator;
     }
 
-    public void borrowItems(BorrowItemsRequest request, BorrowItemsResponseHandler responseHandler, BorrowItemsRequestValidator validator) {
+    public void borrowItems(BorrowItemsRequest request, BorrowItemsResponseHandler responseHandler) {
         validator.validate(request, borrowersRepository, itemsRepository);
         final Borrow borrow = constructBorrow(request);
         borrowsRepository.store(borrow);

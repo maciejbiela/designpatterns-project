@@ -3,6 +3,7 @@ package io.github.maciejbiela.designpatternsproject.core.usecases.borrow.borrowi
 import io.github.maciejbiela.designpatternsproject.core.repositories.BorrowersRepository;
 import io.github.maciejbiela.designpatternsproject.core.repositories.ItemsRepository;
 
+@FunctionalInterface
 public interface BorrowItemsRequestValidator {
-    void validate(BorrowItemsRequest borrowItemsRequest, BorrowersRepository borrowersRepository, ItemsRepository itemsRepository) throws BorrowItemsRequestValidationException;
+    void validate(BorrowItemsRequest request, BorrowersRepository borrowers, ItemsRepository items) throws BorrowItemsRequestValidationException;
 }
