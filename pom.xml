@@ -1,50 +1,56 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>io.github.maciejbiela.designpatterns-project</groupId>
-  <artifactId>designpatterns-project</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <modules>
-    <module>core</module>
-    <module>dataproviders/jpa-repository</module>
-    <module>dataproviders/simple-java-repository</module>
-  </modules>
-  <packaging>pom</packaging>
+    <groupId>io.github.maciejbiela.designpatterns-project</groupId>
+    <artifactId>designpatterns-project</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>core</module>
+        <module>dataproviders/jpa-repository</module>
+        <module>dataproviders/simple-java-repository</module>
+        <module>entrypoints/simple-java-client</module>
+    </modules>
+    <packaging>pom</packaging>
 
-  <name>designpatterns-project</name>
-  <url>http://maciejbiela.github.io</url>
+    <name>designpatterns-project</name>
+    <url>http://maciejbiela.github.io</url>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.5.1</version>
-        <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>io.github.maciejbiela.designpatterns-project</groupId>
-        <artifactId>core</artifactId>
-        <version>1.0-SNAPSHOT</version>
-      </dependency>
-      <dependency>
-        <groupId>org.hibernate</groupId>
-        <artifactId>hibernate-core</artifactId>
-        <version>5.1.0.Final</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.github.maciejbiela.designpatterns-project</groupId>
+                <artifactId>core</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.maciejbiela.designpatterns-project</groupId>
+                <artifactId>simple-java-repository</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>5.1.0.Final</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

@@ -8,11 +8,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>simple-java-repository</artifactId>
+    <artifactId>simple-java-client</artifactId>
     <packaging>jar</packaging>
 
-    <name>simple-java-repository</name>
-    <url>http://maciejbiela.github.io</url>
+    <name>simple-java-client</name>
+    <url>http://maven.apache.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -21,7 +21,7 @@
     <dependencies>
         <dependency>
             <groupId>io.github.maciejbiela.designpatterns-project</groupId>
-            <artifactId>core</artifactId>
+            <artifactId>simple-java-repository</artifactId>
         </dependency>
     </dependencies>
 </project>
