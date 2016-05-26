@@ -7,6 +7,7 @@
   <version>1.0-SNAPSHOT</version>
   <modules>
     <module>core</module>
+    <module>dataproviders/jpa-repository</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -33,7 +34,11 @@
 
   <dependencyManagement>
     <dependencies>
-
+      <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-core</artifactId>
+        <version>5.1.0.Final</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 </project>
