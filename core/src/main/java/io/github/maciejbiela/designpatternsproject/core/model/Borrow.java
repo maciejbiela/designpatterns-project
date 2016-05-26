@@ -4,40 +4,25 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class Borrow {
-    private String borrowId;
-    private LocalDate borrowDate;
-    private List<Item> items;
-    private Borrower borrower;
+    private final Borrower borrower;
+    private final List<Item> items;
+    private final LocalDate borrowDate;
 
-    public String getBorrowId() {
-        return borrowId;
-    }
-
-    public void setBorrowId(String borrowId) {
-        this.borrowId = borrowId;
-    }
-
-    public LocalDate getBorrowDate() {
-        return borrowDate;
-    }
-
-    public void setBorrowDate(LocalDate borrowDate) {
+    public Borrow(Borrower borrower, List<Item> items, LocalDate borrowDate) {
         this.borrowDate = borrowDate;
-    }
-
-    public List<Item> getItems() {
-        return items;
-    }
-
-    public void setItems(List<Item> items) {
         this.items = items;
+        this.borrower = borrower;
     }
 
     public Borrower getBorrower() {
         return borrower;
     }
 
-    public void setBorrower(Borrower borrower) {
-        this.borrower = borrower;
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public LocalDate getBorrowDate() {
+        return borrowDate;
     }
 }
