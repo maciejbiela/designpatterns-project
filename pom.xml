@@ -8,6 +8,7 @@
   <modules>
     <module>core</module>
     <module>dataproviders/jpa-repository</module>
+    <module>dataproviders/simple-java-repository</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -34,6 +35,11 @@
 
   <dependencyManagement>
     <dependencies>
+      <dependency>
+        <groupId>io.github.maciejbiela.designpatterns-project</groupId>
+        <artifactId>core</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
       <dependency>
         <groupId>org.hibernate</groupId>
         <artifactId>hibernate-core</artifactId>
