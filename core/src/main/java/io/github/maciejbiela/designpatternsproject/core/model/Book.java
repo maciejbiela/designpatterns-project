@@ -1,4 +1,4 @@
-package io.github.maciejbiela.designpatternsproject.core;
+package io.github.maciejbiela.designpatternsproject.core.model;
 
 public class Book implements Item {
     private final String name;

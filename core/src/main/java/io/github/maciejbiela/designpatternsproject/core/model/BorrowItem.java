@@ -1,4 +1,4 @@
-package io.github.maciejbiela.designpatternsproject.core;
+package io.github.maciejbiela.designpatternsproject.core.model;
 
 import java.time.LocalDate;
 
