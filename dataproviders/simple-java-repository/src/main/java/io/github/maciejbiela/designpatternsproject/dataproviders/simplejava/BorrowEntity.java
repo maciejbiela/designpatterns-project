@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class BorrowEntity extends Borrow {
-    public BorrowEntity(Long id, Borrower borrower, List<Item> items, LocalDate borrowDate) {
-        super(id, borrower, items, borrowDate);
+    public BorrowEntity(Borrower borrower, List<Item> items, LocalDate borrowDate) {
+        super(borrower, items, borrowDate);
     }
 }

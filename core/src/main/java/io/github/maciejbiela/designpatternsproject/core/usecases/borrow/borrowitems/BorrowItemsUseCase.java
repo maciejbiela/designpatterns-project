@@ -31,17 +31,17 @@ public class BorrowItemsUseCase {
     }
 
     private Borrow constructBorrow(BorrowItemsRequest request) {
-        final Long id = borrowsRepository.getNextId();
         final Borrower borrower = request.getBorrower();
         final List<Item> items = request.getItems();
         updateItemsStatuses(items);
         final LocalDate now = LocalDate.now();
-        return new Borrow(id, borrower, items, now);
+        return new Borrow(borrower, items, now);
     }
 
     private void updateItemsStatuses(List<Item> items) {
         for (Item item : items) {
-            itemsRepository.borrowItem(item.getId());
+            item.setAvailable(false);
+            itemsRepository.update(item);
         }
     }
 }

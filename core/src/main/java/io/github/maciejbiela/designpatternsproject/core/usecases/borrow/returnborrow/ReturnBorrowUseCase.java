@@ -20,7 +20,8 @@ public class ReturnBorrowUseCase {
     public void returnBorrow(Borrow borrow, ReturnBorrowResponseHandler returnBorrowResponseHandler) {
         final List<Item> items = borrow.getItems();
         for (Item item : items) {
-            itemsRepository.returnItem(item.getId());
+            item.setAvailable(true);
+            itemsRepository.update(item);
         }
         borrow.setReturnDate(LocalDate.now());
         borrowsRepository.update(borrow);

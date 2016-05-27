@@ -5,14 +5,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Borrow {
-    protected final Long id;
     protected final Borrower borrower;
     protected final List<Item> items;
     protected final LocalDate borrowDate;
     protected LocalDate returnDate;
 
-    public Borrow(Long id, Borrower borrower, List<Item> items, LocalDate borrowDate) {
-        this.id = id;
+    public Borrow(Borrower borrower, List<Item> items, LocalDate borrowDate) {
         this.borrowDate = borrowDate;
         this.items = items;
         this.borrower = borrower;

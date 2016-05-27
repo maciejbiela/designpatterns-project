@@ -10,8 +10,4 @@ public interface ItemsRepository {
     List<Item> getAll();
 
     void update(Item item);
-
-    void borrowItem(Long id);
-
-    void returnItem(Long id);
 }

@@ -8,6 +8,4 @@ public interface BorrowsRepository {
     List<Borrow> getAll();
 
     void update(Borrow borrow);
-
-    Long getNextId();
 }
