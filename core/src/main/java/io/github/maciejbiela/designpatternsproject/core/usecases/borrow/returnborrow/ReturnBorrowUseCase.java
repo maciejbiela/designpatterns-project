@@ -1,12 +1,8 @@
 package io.github.maciejbiela.designpatternsproject.core.usecases.borrow.returnborrow;
 
 import io.github.maciejbiela.designpatternsproject.core.model.Borrow;
-import io.github.maciejbiela.designpatternsproject.core.model.Item;
 import io.github.maciejbiela.designpatternsproject.core.repositories.borrow.BorrowsRepository;
 import io.github.maciejbiela.designpatternsproject.core.repositories.items.ItemsRepository;
-
-import java.time.LocalDate;
-import java.util.List;
 
 public class ReturnBorrowUseCase {
     private final BorrowsRepository borrowsRepository;
@@ -17,14 +13,6 @@ public class ReturnBorrowUseCase {
         this.itemsRepository = itemsRepository;
     }
 
-    public void returnBorrow(Borrow borrow, ReturnBorrowResponseHandler returnBorrowResponseHandler) {
-        final List<Item> items = borrow.getItems();
-        for (Item item : items) {
-            item.setAvailable(true);
-            itemsRepository.update(item);
-        }
-        borrow.setReturnDate(LocalDate.now());
-        borrowsRepository.update(borrow);
-        returnBorrowResponseHandler.onResponse(borrow);
+    public void returnBorrow(Borrow borrow) {
     }
 }
