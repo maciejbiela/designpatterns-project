@@ -12,7 +12,7 @@ public class GetAllBorrowersUseCase {
         this.borrowersRepository = borrowersRepository;
     }
 
-    public List<Borrower> getAllBorrowers() {
+    public List<Borrower> execute() {
         return borrowersRepository.getAll();
     }
 }

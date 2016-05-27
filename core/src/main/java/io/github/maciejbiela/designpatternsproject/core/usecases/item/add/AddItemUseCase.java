@@ -10,7 +10,7 @@ public class AddItemUseCase {
         this.itemsRepository = itemsRepository;
     }
 
-    public void addItem(Item item) {
+    public void execute(Item item) {
         itemsRepository.update(item);
     }
 }

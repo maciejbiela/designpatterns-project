@@ -22,12 +22,12 @@ public class BorrowItemsUseCase {
         this.itemsRepository = itemsRepository;
     }
 
-    public Borrow borrowItemsWithValidation(Borrower borrower, List<Item> items, BorrowItemsValidator borrowItemsValidator) {
+    public Borrow execute(Borrower borrower, List<Item> items, BorrowItemsValidator borrowItemsValidator) {
         borrowItemsValidator.validate(borrower, items);
-        return borrowItems(borrower, items);
+        return execute(borrower, items);
     }
 
-    public Borrow borrowItems(Borrower borrower, List<Item> items) {
+    public Borrow execute(Borrower borrower, List<Item> items) {
         final SimpleBorrowItemsValidator simpleBorrowItemsValidator = new SimpleBorrowItemsValidator(borrowersRepository, itemsRepository);
         simpleBorrowItemsValidator.validate(borrower, items);
         setItemsAsBorrowed(items);

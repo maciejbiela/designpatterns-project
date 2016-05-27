@@ -10,7 +10,7 @@ public class AddBorrowerUseCase {
         this.borrowersRepository = borrowersRepository;
     }
 
-    public void addBorrower(Borrower borrower) {
+    public void execute(Borrower borrower) {
         borrowersRepository.update(borrower);
     }
 }

@@ -14,7 +14,7 @@ public class GetAvailableItemsUseCase {
         this.itemsRepository = itemsRepository;
     }
 
-    public List<Item> getAvailableItems() {
+    public List<Item> execute() {
         final List<Item> allItems = itemsRepository.getAll();
         return allItems.stream()
                 .filter(Item::isAvailable)

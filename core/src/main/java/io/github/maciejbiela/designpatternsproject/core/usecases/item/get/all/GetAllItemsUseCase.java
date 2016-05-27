@@ -12,7 +12,7 @@ public class GetAllItemsUseCase {
         this.itemsRepository = itemsRepository;
     }
 
-    public List<Item> getAllItems() {
+    public List<Item> execute() {
         return itemsRepository.getAll();
     }
 }

@@ -17,7 +17,7 @@ public class ReturnBorrowUseCase {
         this.itemsRepository = itemsRepository;
     }
 
-    public Borrow returnBorrow(Borrow borrow) {
+    public Borrow execute(Borrow borrow) {
         final SimpleReturnBorrowValidator simpleReturnBorrowValidator = new SimpleReturnBorrowValidator(borrowersRepository, borrowsRepository, itemsRepository);
         simpleReturnBorrowValidator.validate(borrow);
         setItemsAsReturned(borrow);

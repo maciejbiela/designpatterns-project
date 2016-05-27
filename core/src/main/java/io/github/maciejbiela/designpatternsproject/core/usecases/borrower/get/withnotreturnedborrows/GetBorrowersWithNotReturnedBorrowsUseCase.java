@@ -15,7 +15,7 @@ public class GetBorrowersWithNotReturnedBorrowsUseCase {
         this.borrowsRepository = borrowsRepository;
     }
 
-    public List<Borrower> getBorrowersWithNotReturnedBorrows() {
+    public List<Borrower> execute() {
         final List<Borrow> allBorrows = borrowsRepository.getAll();
         final List<Borrow> notReturnedBorrows = allBorrows.stream()
                 .filter(borrow -> borrow.getReturnDate() == null)
