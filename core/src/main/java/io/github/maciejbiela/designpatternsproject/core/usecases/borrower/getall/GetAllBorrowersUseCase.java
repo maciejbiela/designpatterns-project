@@ -1,7 +1,7 @@
 package io.github.maciejbiela.designpatternsproject.core.usecases.borrower.getall;
 
 import io.github.maciejbiela.designpatternsproject.core.model.Borrower;
-import io.github.maciejbiela.designpatternsproject.core.repositories.BorrowersRepository;
+import io.github.maciejbiela.designpatternsproject.core.repositories.borrowers.BorrowersRepository;
 
 import java.util.List;
 

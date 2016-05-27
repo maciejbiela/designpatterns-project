@@ -1,7 +1,7 @@
 package io.github.maciejbiela.designpatternsproject.core.usecases.borrow.borrowitems;
 
-import io.github.maciejbiela.designpatternsproject.core.repositories.BorrowersRepository;
-import io.github.maciejbiela.designpatternsproject.core.repositories.ItemsRepository;
+import io.github.maciejbiela.designpatternsproject.core.repositories.borrowers.BorrowersRepository;
+import io.github.maciejbiela.designpatternsproject.core.repositories.items.ItemsRepository;
 
 @FunctionalInterface
 public interface BorrowItemsRequestValidator {

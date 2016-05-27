@@ -3,9 +3,9 @@ package io.github.maciejbiela.designpatternsproject.core.usecases.borrow.borrowi
 import io.github.maciejbiela.designpatternsproject.core.model.Borrow;
 import io.github.maciejbiela.designpatternsproject.core.model.Borrower;
 import io.github.maciejbiela.designpatternsproject.core.model.Item;
-import io.github.maciejbiela.designpatternsproject.core.repositories.BorrowersRepository;
-import io.github.maciejbiela.designpatternsproject.core.repositories.BorrowsRepository;
-import io.github.maciejbiela.designpatternsproject.core.repositories.ItemsRepository;
+import io.github.maciejbiela.designpatternsproject.core.repositories.borrow.BorrowsRepository;
+import io.github.maciejbiela.designpatternsproject.core.repositories.borrowers.BorrowersRepository;
+import io.github.maciejbiela.designpatternsproject.core.repositories.items.ItemsRepository;
 
 import java.time.LocalDate;
 import java.util.List;

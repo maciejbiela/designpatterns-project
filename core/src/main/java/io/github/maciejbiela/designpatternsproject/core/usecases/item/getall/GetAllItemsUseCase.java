@@ -1,7 +1,7 @@
 package io.github.maciejbiela.designpatternsproject.core.usecases.item.getall;
 
 import io.github.maciejbiela.designpatternsproject.core.model.Item;
-import io.github.maciejbiela.designpatternsproject.core.repositories.ItemsRepository;
+import io.github.maciejbiela.designpatternsproject.core.repositories.items.ItemsRepository;
 
 import java.util.List;
 

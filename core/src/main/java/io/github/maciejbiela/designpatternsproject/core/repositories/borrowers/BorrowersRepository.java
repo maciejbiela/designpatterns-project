@@ -1,4 +1,4 @@
-package io.github.maciejbiela.designpatternsproject.core.repositories;
+package io.github.maciejbiela.designpatternsproject.core.repositories.borrowers;
 
 import io.github.maciejbiela.designpatternsproject.core.model.Borrower;
 

@@ -1,8 +1,10 @@
 package io.github.maciejbiela.designpatternsproject.dataproviders.simplejava;
 
 import io.github.maciejbiela.designpatternsproject.core.model.Item;
-import io.github.maciejbiela.designpatternsproject.core.repositories.BorrowException;
-import io.github.maciejbiela.designpatternsproject.core.repositories.ItemsRepository;
+import io.github.maciejbiela.designpatternsproject.core.repositories.items.BorrowingNotAvailableItemException;
+import io.github.maciejbiela.designpatternsproject.core.repositories.items.ItemNotFoundException;
+import io.github.maciejbiela.designpatternsproject.core.repositories.items.ItemsRepository;
+import io.github.maciejbiela.designpatternsproject.core.repositories.items.ReturningAvailableItemException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +39,7 @@ public class SimpleItemsRepository implements ItemsRepository {
     public void borrowItem(Long id) {
         final Item itemToBorrow = getItem(id);
         if (!itemToBorrow.isAvailable()) {
-            throw new BorrowException();
+            throw new BorrowingNotAvailableItemException();
         }
         itemToBorrow.setAvailable(false);
     }
@@ -46,7 +48,7 @@ public class SimpleItemsRepository implements ItemsRepository {
     public void returnItem(Long id) {
         final Item itemToBorrow = getItem(id);
         if (itemToBorrow.isAvailable()) {
-            throw new BorrowException();
+            throw new ReturningAvailableItemException();
         }
         itemToBorrow.setAvailable(true);
     }
@@ -55,6 +57,6 @@ public class SimpleItemsRepository implements ItemsRepository {
         return ITEMS.stream()
                 .filter(item -> item.getId().equals(id))
                 .findFirst()
-                .orElseThrow(BorrowException::new);
+                .orElseThrow(ItemNotFoundException::new);
     }
 }
