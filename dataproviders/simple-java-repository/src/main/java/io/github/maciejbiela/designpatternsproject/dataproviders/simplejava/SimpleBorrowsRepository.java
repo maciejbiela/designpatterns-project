@@ -15,7 +15,12 @@ public class SimpleBorrowsRepository implements BorrowsRepository {
     }
 
     @Override
-    public void store(Borrow borrow) {
+    public void update(Borrow borrow) {
         BORROWS.add(borrow);
+    }
+
+    @Override
+    public Long getNextId() {
+        return (long) (BORROWS.size() + 1);
     }
 }

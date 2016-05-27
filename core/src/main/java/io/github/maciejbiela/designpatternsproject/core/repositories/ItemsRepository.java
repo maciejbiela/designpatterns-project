@@ -9,5 +9,9 @@ public interface ItemsRepository {
 
     List<Item> getAll();
 
-    void store(Item item);
+    void update(Item item);
+
+    void borrowItem(Long id);
+
+    void returnItem(Long id);
 }

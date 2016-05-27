@@ -26,14 +26,22 @@ public class BorrowItemsUseCase {
     public void borrowItems(BorrowItemsRequest request, BorrowItemsResponseHandler responseHandler) {
         validator.validate(request, borrowersRepository, itemsRepository);
         final Borrow borrow = constructBorrow(request);
-        borrowsRepository.store(borrow);
+        borrowsRepository.update(borrow);
         responseHandler.onResponse(borrow);
     }
 
     private Borrow constructBorrow(BorrowItemsRequest request) {
+        final Long id = borrowsRepository.getNextId();
         final Borrower borrower = request.getBorrower();
         final List<Item> items = request.getItems();
+        updateItemsStatuses(items);
         final LocalDate now = LocalDate.now();
-        return new Borrow(borrower, items, now);
+        return new Borrow(id, borrower, items, now);
+    }
+
+    private void updateItemsStatuses(List<Item> items) {
+        for (Item item : items) {
+            itemsRepository.borrowItem(item.getId());
+        }
     }
 }

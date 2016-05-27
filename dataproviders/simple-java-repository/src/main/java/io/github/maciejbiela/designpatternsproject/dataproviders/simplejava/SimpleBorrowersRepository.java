@@ -28,7 +28,7 @@ public class SimpleBorrowersRepository implements BorrowersRepository {
     }
 
     @Override
-    public void store(Borrower borrower) {
+    public void update(Borrower borrower) {
         BORROWERS.add(borrower);
     }
 }

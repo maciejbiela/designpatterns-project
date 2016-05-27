@@ -5,11 +5,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Borrow {
+    protected final Long id;
     protected final Borrower borrower;
     protected final List<Item> items;
     protected final LocalDate borrowDate;
+    protected LocalDate returnDate;
 
-    public Borrow(Borrower borrower, List<Item> items, LocalDate borrowDate) {
+    public Borrow(Long id, Borrower borrower, List<Item> items, LocalDate borrowDate) {
+        this.id = id;
         this.borrowDate = borrowDate;
         this.items = items;
         this.borrower = borrower;
@@ -27,14 +30,26 @@ public class Borrow {
         return borrowDate;
     }
 
+    public LocalDate getReturnDate() {
+        return returnDate;
+    }
+
+    public void setReturnDate(LocalDate returnDate) {
+        this.returnDate = returnDate;
+    }
+
     @Override
     public String toString() {
-        return "Borrow[borrower='" + borrower.getName() + "', " +
-                "items=(" + getItemsAsString() + "), " +
-                "date=" + borrowDate + "]";
+        String s = "Borrow[borrower=" + borrower + "," +
+                "items=(" + getItemsAsString() + ")," +
+                "borrowDate=" + borrowDate;
+        if (returnDate != null) {
+            s = s + ",returnDate=" + returnDate;
+        }
+        return s + "]";
     }
 
     private String getItemsAsString() {
-        return items.stream().map(Item::getName).collect(Collectors.joining("','", "'", "'"));
+        return items.stream().map(Item::toString).collect(Collectors.joining(","));
     }
 }

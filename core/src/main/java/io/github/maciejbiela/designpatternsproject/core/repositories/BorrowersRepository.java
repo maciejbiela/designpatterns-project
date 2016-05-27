@@ -9,5 +9,5 @@ public interface BorrowersRepository {
 
     List<Borrower> getAll();
 
-    void store(Borrower borrower);
+    void update(Borrower borrower);
 }

@@ -7,5 +7,7 @@ import java.util.List;
 public interface BorrowsRepository {
     List<Borrow> getAll();
 
-    void store(Borrow borrow);
+    void update(Borrow borrow);
+
+    Long getNextId();
 }
