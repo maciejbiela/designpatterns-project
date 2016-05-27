@@ -1,4 +1,4 @@
-package io.github.maciejbiela.designpatternsproject.core.usecases.borrower.getsingle;
+package io.github.maciejbiela.designpatternsproject.core.usecases.borrower.get.single;
 
 import io.github.maciejbiela.designpatternsproject.core.model.Borrower;
 import io.github.maciejbiela.designpatternsproject.core.repositories.borrowers.BorrowersRepository;

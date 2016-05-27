@@ -1,4 +1,4 @@
-package io.github.maciejbiela.designpatternsproject.core.usecases.borrower.getall;
+package io.github.maciejbiela.designpatternsproject.core.usecases.borrower.get.all;
 
 import io.github.maciejbiela.designpatternsproject.core.model.Borrower;
 import io.github.maciejbiela.designpatternsproject.core.repositories.borrowers.BorrowersRepository;

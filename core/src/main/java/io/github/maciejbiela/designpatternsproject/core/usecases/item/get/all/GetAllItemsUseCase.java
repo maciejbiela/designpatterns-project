@@ -1,4 +1,4 @@
-package io.github.maciejbiela.designpatternsproject.core.usecases.item.getall;
+package io.github.maciejbiela.designpatternsproject.core.usecases.item.get.all;
 
 import io.github.maciejbiela.designpatternsproject.core.model.Item;
 import io.github.maciejbiela.designpatternsproject.core.repositories.items.ItemsRepository;
