@@ -6,4 +6,8 @@ public class BorrowerEntity extends Borrower {
     public BorrowerEntity(String name) {
         this.name = name;
     }
+
+    public BorrowerEntity(Borrower borrower) {
+        this.name = borrower.getName();
+    }
 }

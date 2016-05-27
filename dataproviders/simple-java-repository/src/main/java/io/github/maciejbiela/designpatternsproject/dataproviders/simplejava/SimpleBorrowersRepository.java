@@ -5,6 +5,7 @@ import io.github.maciejbiela.designpatternsproject.core.repositories.borrowers.B
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class SimpleBorrowersRepository implements BorrowersRepository {
     private static final List<Borrower> BORROWERS = new ArrayList<>();
@@ -29,6 +30,13 @@ public class SimpleBorrowersRepository implements BorrowersRepository {
 
     @Override
     public void update(Borrower borrower) {
-        BORROWERS.add(borrower);
+        final Optional<Borrower> possiblyExistingBorrower = BORROWERS.stream()
+                .filter(b -> b.getName().equals(borrower.getName()))
+                .findFirst();
+        if (possiblyExistingBorrower.isPresent()) {
+            possiblyExistingBorrower.get().updateAccordingTo(borrower);
+        } else {
+            BORROWERS.add(new BorrowerEntity(borrower));
+        }
     }
 }
