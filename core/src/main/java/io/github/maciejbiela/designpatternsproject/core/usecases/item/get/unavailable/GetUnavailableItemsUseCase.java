@@ -1,6 +1,6 @@
 package io.github.maciejbiela.designpatternsproject.core.usecases.item.get.unavailable;
 
-import io.github.maciejbiela.designpatternsproject.core.model.Item;
+import io.github.maciejbiela.designpatternsproject.core.model.item.Item;
 import io.github.maciejbiela.designpatternsproject.core.repositories.items.ItemsRepository;
 
 import java.util.List;

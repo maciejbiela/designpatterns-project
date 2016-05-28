@@ -1,4 +1,7 @@
-package io.github.maciejbiela.designpatternsproject.core.model;
+package io.github.maciejbiela.designpatternsproject.core.model.borrow;
+
+import io.github.maciejbiela.designpatternsproject.core.model.borrower.Borrower;
+import io.github.maciejbiela.designpatternsproject.core.model.item.Item;
 
 import java.time.LocalDate;
 import java.util.List;

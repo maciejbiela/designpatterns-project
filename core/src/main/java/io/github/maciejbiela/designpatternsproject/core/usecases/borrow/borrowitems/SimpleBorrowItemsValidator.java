@@ -1,7 +1,7 @@
 package io.github.maciejbiela.designpatternsproject.core.usecases.borrow.borrowitems;
 
-import io.github.maciejbiela.designpatternsproject.core.model.Borrower;
-import io.github.maciejbiela.designpatternsproject.core.model.Item;
+import io.github.maciejbiela.designpatternsproject.core.model.borrower.Borrower;
+import io.github.maciejbiela.designpatternsproject.core.model.item.Item;
 import io.github.maciejbiela.designpatternsproject.core.repositories.borrowers.BorrowersRepository;
 import io.github.maciejbiela.designpatternsproject.core.repositories.items.ItemsRepository;
 

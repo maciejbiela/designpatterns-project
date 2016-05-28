@@ -1,4 +1,4 @@
-package io.github.maciejbiela.designpatternsproject.core.model;
+package io.github.maciejbiela.designpatternsproject.core.model.borrower;
 
 import java.util.Objects;
 

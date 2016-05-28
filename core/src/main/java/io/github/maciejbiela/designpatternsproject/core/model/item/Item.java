@@ -1,4 +1,4 @@
-package io.github.maciejbiela.designpatternsproject.core.model;
+package io.github.maciejbiela.designpatternsproject.core.model.item;
 
 import java.util.Objects;
 

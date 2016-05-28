@@ -1,7 +1,7 @@
 package io.github.maciejbiela.designpatternsproject.core.usecases.borrower.get.withnotreturnedborrows;
 
-import io.github.maciejbiela.designpatternsproject.core.model.Borrow;
-import io.github.maciejbiela.designpatternsproject.core.model.Borrower;
+import io.github.maciejbiela.designpatternsproject.core.model.borrow.Borrow;
+import io.github.maciejbiela.designpatternsproject.core.model.borrower.Borrower;
 import io.github.maciejbiela.designpatternsproject.core.repositories.borrow.BorrowsRepository;
 
 import java.util.List;

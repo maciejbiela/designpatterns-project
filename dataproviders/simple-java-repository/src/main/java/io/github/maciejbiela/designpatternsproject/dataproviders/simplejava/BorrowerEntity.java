@@ -1,6 +1,6 @@
 package io.github.maciejbiela.designpatternsproject.dataproviders.simplejava;
 
-import io.github.maciejbiela.designpatternsproject.core.model.Borrower;
+import io.github.maciejbiela.designpatternsproject.core.model.borrower.Borrower;
 
 public class BorrowerEntity extends Borrower {
     public BorrowerEntity(String name) {
