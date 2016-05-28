@@ -32,6 +32,10 @@ public class Borrow {
         return returnDate;
     }
 
+    public void setReturnDate(LocalDate returnDate) {
+        this.returnDate = returnDate;
+    }
+
     public void updateAccordingTo(Borrow borrow) {
         this.returnDate = borrow.returnDate;
     }

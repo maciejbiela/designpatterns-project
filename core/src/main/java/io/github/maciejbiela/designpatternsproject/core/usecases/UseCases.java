@@ -4,6 +4,7 @@ import io.github.maciejbiela.designpatternsproject.core.repositories.borrow.Borr
 import io.github.maciejbiela.designpatternsproject.core.repositories.borrowers.BorrowersRepository;
 import io.github.maciejbiela.designpatternsproject.core.repositories.items.ItemsRepository;
 import io.github.maciejbiela.designpatternsproject.core.usecases.borrow.borrowitems.BorrowItemsUseCase;
+import io.github.maciejbiela.designpatternsproject.core.usecases.borrow.get.all.GetAllBorrowsUseCase;
 import io.github.maciejbiela.designpatternsproject.core.usecases.borrow.returnborrow.ReturnBorrowUseCase;
 import io.github.maciejbiela.designpatternsproject.core.usecases.borrower.add.AddBorrowerUseCase;
 import io.github.maciejbiela.designpatternsproject.core.usecases.borrower.get.all.GetAllBorrowersUseCase;
@@ -12,6 +13,7 @@ import io.github.maciejbiela.designpatternsproject.core.usecases.borrower.get.wi
 import io.github.maciejbiela.designpatternsproject.core.usecases.item.add.AddItemUseCase;
 import io.github.maciejbiela.designpatternsproject.core.usecases.item.get.all.GetAllItemsUseCase;
 import io.github.maciejbiela.designpatternsproject.core.usecases.item.get.available.GetAvailableItemsUseCase;
+import io.github.maciejbiela.designpatternsproject.core.usecases.item.get.single.GetSingleItemUseCase;
 import io.github.maciejbiela.designpatternsproject.core.usecases.item.get.unavailable.GetUnavailableItemsUseCase;
 
 public class UseCases {
@@ -25,32 +27,16 @@ public class UseCases {
         this.itemsRepository = itemsRepository;
     }
 
-    public BorrowersRepository getBorrowersRepository() {
-        return borrowersRepository;
-    }
-
-    public void setBorrowersRepository(BorrowersRepository borrowersRepository) {
-        this.borrowersRepository = borrowersRepository;
-    }
-
-    public BorrowsRepository getBorrowsRepository() {
-        return borrowsRepository;
-    }
-
-    public void setBorrowsRepository(BorrowsRepository borrowsRepository) {
-        this.borrowsRepository = borrowsRepository;
-    }
-
-    public ItemsRepository getItemsRepository() {
-        return itemsRepository;
-    }
-
     public void setItemsRepository(ItemsRepository itemsRepository) {
         this.itemsRepository = itemsRepository;
     }
 
     public BorrowItemsUseCase borrowItemsUseCase() {
         return new BorrowItemsUseCase(borrowersRepository, borrowsRepository, itemsRepository);
+    }
+
+    public GetAllBorrowsUseCase getAllBorrowsUseCase() {
+        return new GetAllBorrowsUseCase(borrowsRepository);
     }
 
     public ReturnBorrowUseCase returnBorrowUseCase() {
@@ -83,6 +69,10 @@ public class UseCases {
 
     public GetAvailableItemsUseCase getAvailableItemsUseCase() {
         return new GetAvailableItemsUseCase(itemsRepository);
+    }
+
+    public GetSingleItemUseCase getSingleItemUseCase() {
+        return new GetSingleItemUseCase(itemsRepository);
     }
 
     public GetUnavailableItemsUseCase getUnavailableItemsUseCase() {

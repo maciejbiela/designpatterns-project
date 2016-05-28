@@ -6,6 +6,8 @@ import io.github.maciejbiela.designpatternsproject.core.repositories.borrow.Borr
 import io.github.maciejbiela.designpatternsproject.core.repositories.borrowers.BorrowersRepository;
 import io.github.maciejbiela.designpatternsproject.core.repositories.items.ItemsRepository;
 
+import java.time.LocalDate;
+
 public class ReturnBorrowUseCase {
     private final BorrowersRepository borrowersRepository;
     private final BorrowsRepository borrowsRepository;
@@ -21,6 +23,7 @@ public class ReturnBorrowUseCase {
         final SimpleReturnBorrowValidator simpleReturnBorrowValidator = new SimpleReturnBorrowValidator(borrowersRepository, borrowsRepository, itemsRepository);
         simpleReturnBorrowValidator.validate(borrow);
         setItemsAsReturned(borrow);
+        borrow.setReturnDate(LocalDate.now());
         borrowsRepository.update(borrow);
         return borrow;
     }

@@ -7,6 +7,7 @@ import io.github.maciejbiela.designpatternsproject.core.repositories.borrow.Borr
 import io.github.maciejbiela.designpatternsproject.core.repositories.borrowers.BorrowersRepository;
 import io.github.maciejbiela.designpatternsproject.core.repositories.items.ItemsRepository;
 
+import java.util.Collections;
 import java.util.List;
 
 import static java.time.LocalDate.now;
@@ -34,6 +35,11 @@ public class BorrowItemsUseCase {
         final Borrow borrow = new Borrow(borrower, items, now());
         borrowsRepository.update(borrow);
         return borrow;
+    }
+
+    public Borrow execute(Borrower borrower, Item item) {
+        final List<Item> oneItem = Collections.singletonList(item);
+        return execute(borrower, oneItem);
     }
 
     private void setItemsAsBorrowed(List<Item> items) {
