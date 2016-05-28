@@ -6,6 +6,11 @@ public abstract class Item {
     protected String name;
     protected boolean available;
 
+    public Item(String name) {
+        this.name = name;
+        this.available = true;
+    }
+
     public String getName() {
         return name;
     }

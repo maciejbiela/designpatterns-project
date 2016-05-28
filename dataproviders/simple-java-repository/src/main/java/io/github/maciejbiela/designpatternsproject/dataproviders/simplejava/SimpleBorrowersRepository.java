@@ -1,6 +1,7 @@
 package io.github.maciejbiela.designpatternsproject.dataproviders.simplejava;
 
 import io.github.maciejbiela.designpatternsproject.core.model.borrower.Borrower;
+import io.github.maciejbiela.designpatternsproject.core.model.borrower.IndividualBorrower;
 import io.github.maciejbiela.designpatternsproject.core.repositories.borrowers.BorrowersRepository;
 
 import java.util.ArrayList;
@@ -11,8 +12,8 @@ public class SimpleBorrowersRepository implements BorrowersRepository {
     private static final List<Borrower> BORROWERS = new ArrayList<>();
 
     static {
-        BORROWERS.add(new BorrowerEntity("Maciej"));
-        BORROWERS.add(new BorrowerEntity("Wioletta"));
+        BORROWERS.add(new IndividualBorrower("Maciej"));
+        BORROWERS.add(new IndividualBorrower("Wioletta"));
     }
 
     @Override
@@ -36,7 +37,7 @@ public class SimpleBorrowersRepository implements BorrowersRepository {
         if (possiblyExistingBorrower.isPresent()) {
             possiblyExistingBorrower.get().updateAccordingTo(borrower);
         } else {
-            BORROWERS.add(new BorrowerEntity(borrower));
+            BORROWERS.add(borrower);
         }
     }
 }
