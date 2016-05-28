@@ -50,13 +50,18 @@ public class Borrow {
 
     @Override
     public String toString() {
-        String s = "Borrow[borrower=" + borrower + "," +
-                "items=(" + getItemsAsString() + ")," +
-                "borrowDate=" + borrowDate;
+        StringBuilder builder = new StringBuilder("Borrow[borrower=");
+        builder.append(borrower);
+        builder.append(",items=(");
+        builder.append(getItemsAsString());
+        builder.append("),borrowDate=");
+        builder.append(borrowDate);
         if (returnDate != null) {
-            s = s + ",returnDate=" + returnDate;
+            builder.append(",returnDate=");
+            builder.append(returnDate);
         }
-        return s + "]";
+        builder.append("]");
+        return builder.toString();
     }
 
     private String getItemsAsString() {

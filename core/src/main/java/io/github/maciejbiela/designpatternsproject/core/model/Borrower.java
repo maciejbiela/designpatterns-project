@@ -32,6 +32,6 @@ public abstract class Borrower {
 
     @Override
     public String toString() {
-        return "Borrower[name='" + name + "']";
+        return this.getClass().getSimpleName() + "[name='" + name + "']";
     }
 }
