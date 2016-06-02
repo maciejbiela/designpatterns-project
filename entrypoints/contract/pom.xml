@@ -1,16 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>designpatterns-project</artifactId>
+        <artifactId>entrypoints</artifactId>
         <groupId>io.github.maciejbiela.designpatterns-project</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>configuration</artifactId>
+    <artifactId>contract</artifactId>
     <packaging>jar</packaging>
 
-    <name>configuration</name>
+    <name>contract</name>
     <url>http://maciejbiela.github.io</url>
 
     <properties>
@@ -21,18 +21,6 @@
         <dependency>
             <groupId>io.github.maciejbiela.designpatterns-project</groupId>
             <artifactId>core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.github.maciejbiela.designpatterns-project</groupId>
-            <artifactId>simple-java-repository</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.github.maciejbiela.designpatterns-project</groupId>
-            <artifactId>rest-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
     </dependencies>
 </project>
