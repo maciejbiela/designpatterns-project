@@ -10,8 +10,8 @@ public class GetSingleItemUseCase {
         this.itemsRepository = itemsRepository;
     }
 
-    public Item execute(String name) {
-        final Item item = itemsRepository.getByName(name);
+    public Item execute(Long id) {
+        final Item item = itemsRepository.get(id);
         if (item == null) {
             throw new ItemNotFoundException();
         }

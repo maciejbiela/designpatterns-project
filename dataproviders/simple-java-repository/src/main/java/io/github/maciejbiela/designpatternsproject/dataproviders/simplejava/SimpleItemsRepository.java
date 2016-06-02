@@ -16,12 +16,15 @@ public class SimpleItemsRepository implements ItemsRepository {
     static {
         ITEMS.add(new Item(BOOK, "Core Java"));
         ITEMS.add(new Item(NOTES, "Econometrics"));
+        for (int i = 0; i < ITEMS.size(); i++) {
+            ITEMS.get(i).setId((long) (i + 1));
+        }
     }
 
     @Override
-    public Item getByName(String name) {
+    public Item get(Long id) {
         return ITEMS.stream()
-                .filter(item -> item.getName().equalsIgnoreCase(name))
+                .filter(item -> item.getId().equals(id))
                 .findFirst()
                 .orElse(null);
     }
@@ -34,11 +37,12 @@ public class SimpleItemsRepository implements ItemsRepository {
     @Override
     public void update(Item item) {
         final Optional<Item> possiblyExistingItem = ITEMS.stream()
-                .filter(i -> i.equals(item))
+                .filter(i -> i.getId().equals(item.getId()))
                 .findFirst();
         if (possiblyExistingItem.isPresent()) {
             possiblyExistingItem.get().updateAccordingTo(item);
         } else {
+            item.setId((long) (ITEMS.size() + 1));
             ITEMS.add(item);
         }
     }

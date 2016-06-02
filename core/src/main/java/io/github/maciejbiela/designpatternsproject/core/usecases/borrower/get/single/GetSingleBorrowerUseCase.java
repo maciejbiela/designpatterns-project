@@ -10,8 +10,8 @@ public class GetSingleBorrowerUseCase {
         this.borrowersRepository = borrowersRepository;
     }
 
-    public Borrower execute(String name) {
-        Borrower borrower = borrowersRepository.getByName(name);
+    public Borrower execute(Long id) {
+        Borrower borrower = borrowersRepository.get(id);
         if (borrower == null) {
             throw new BorrowerNotFoundException();
         }

@@ -18,11 +18,12 @@ public class SimpleBorrowsRepository implements BorrowsRepository {
     @Override
     public void update(Borrow borrow) {
         final Optional<Borrow> possiblyExistingBorrow = BORROWS.stream()
-                .filter(b -> b.equals(borrow))
+                .filter(b -> b.getId().equals(borrow.getId()))
                 .findFirst();
         if (possiblyExistingBorrow.isPresent()) {
             possiblyExistingBorrow.get().updateAccordingTo(borrow);
         } else {
+            borrow.setId((long) BORROWS.size());
             BORROWS.add(borrow);
         }
     }

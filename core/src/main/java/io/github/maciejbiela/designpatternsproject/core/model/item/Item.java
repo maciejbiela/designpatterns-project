@@ -3,6 +3,7 @@ package io.github.maciejbiela.designpatternsproject.core.model.item;
 import java.util.Objects;
 
 public class Item {
+    private Long id;
     private String name;
     private boolean available;
     private ItemType type;
@@ -11,6 +12,14 @@ public class Item {
         this.name = name;
         this.available = true;
         this.type = type;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {

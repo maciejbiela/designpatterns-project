@@ -5,7 +5,7 @@ import io.github.maciejbiela.designpatternsproject.core.model.borrower.Borrower;
 import java.util.List;
 
 public interface BorrowersRepository {
-    Borrower getByName(String name);
+    Borrower get(Long id);
 
     List<Borrower> getAll();
 

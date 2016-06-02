@@ -21,8 +21,8 @@ public class BorrowersEndpoint {
         return borrowerUseCases.getAllBorrowersUseCase().execute();
     }
 
-    @RequestMapping("/borrower/{name}")
-    public Borrower getSingleBorrower(@PathVariable String name) {
-        return borrowerUseCases.getSingleBorrowerUseCase().execute(name);
+    @RequestMapping("/borrower/{id}")
+    public Borrower getSingleBorrower(@PathVariable Long id) {
+        return borrowerUseCases.getSingleBorrowerUseCase().execute(id);
     }
 }

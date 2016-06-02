@@ -15,12 +15,15 @@ public class SimpleBorrowersRepository implements BorrowersRepository {
     static {
         BORROWERS.add(new Borrower(INDIVIDUAL, "Maciej"));
         BORROWERS.add(new Borrower(INDIVIDUAL, "Wioletta"));
+        for (int i = 0; i < BORROWERS.size(); i++) {
+            BORROWERS.get(i).setId((long) (i + 1));
+        }
     }
 
     @Override
-    public Borrower getByName(String name) {
+    public Borrower get(Long id) {
         return BORROWERS.stream()
-                .filter(borrower -> borrower.getName().equalsIgnoreCase(name))
+                .filter(borrower -> borrower.getId().equals(id))
                 .findFirst()
                 .orElse(null);
     }
@@ -33,11 +36,12 @@ public class SimpleBorrowersRepository implements BorrowersRepository {
     @Override
     public void update(Borrower borrower) {
         final Optional<Borrower> possiblyExistingBorrower = BORROWERS.stream()
-                .filter(b -> b.getName().equals(borrower.getName()))
+                .filter(b -> b.getId().equals(borrower.getId()))
                 .findFirst();
         if (possiblyExistingBorrower.isPresent()) {
             possiblyExistingBorrower.get().updateAccordingTo(borrower);
         } else {
+            borrower.setId((long) (BORROWERS.size() + 1));
             BORROWERS.add(borrower);
         }
     }

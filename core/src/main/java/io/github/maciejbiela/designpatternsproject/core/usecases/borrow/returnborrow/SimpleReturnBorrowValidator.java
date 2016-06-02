@@ -33,7 +33,7 @@ public class SimpleReturnBorrowValidator {
     }
 
     private void validateBorrower(Borrower borrower) {
-        if (borrower == null || borrowersRepository.getByName(borrower.getName()) == null) {
+        if (borrower == null || borrowersRepository.get(borrower.getId()) == null) {
             throw new ReturnBorrowValidationException();
         }
     }
@@ -48,7 +48,7 @@ public class SimpleReturnBorrowValidator {
     }
 
     private void validateItem(Item item) {
-        if (item == null || itemsRepository.getByName(item.getName()) == null) {
+        if (item == null || itemsRepository.get(item.getId()) == null) {
             throw new ReturnBorrowValidationException();
         }
     }

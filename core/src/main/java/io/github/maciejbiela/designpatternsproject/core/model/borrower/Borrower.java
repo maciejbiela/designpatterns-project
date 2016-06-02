@@ -3,12 +3,21 @@ package io.github.maciejbiela.designpatternsproject.core.model.borrower;
 import java.util.Objects;
 
 public class Borrower {
+    private Long id;
     private String name;
     private BorrowerType type;
 
     public Borrower(BorrowerType type, String name) {
         this.name = name;
         this.type = type;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {

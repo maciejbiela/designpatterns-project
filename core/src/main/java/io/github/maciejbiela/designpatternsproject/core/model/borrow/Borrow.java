@@ -9,15 +9,24 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class Borrow {
-    protected final Borrower borrower;
-    protected final List<Item> items;
-    protected final LocalDate borrowDate;
-    protected LocalDate returnDate;
+    private Long id;
+    private final Borrower borrower;
+    private final List<Item> items;
+    private final LocalDate borrowDate;
+    private LocalDate returnDate;
 
     public Borrow(Borrower borrower, List<Item> items, LocalDate borrowDate) {
         this.borrowDate = borrowDate;
         this.items = items;
         this.borrower = borrower;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Borrower getBorrower() {
