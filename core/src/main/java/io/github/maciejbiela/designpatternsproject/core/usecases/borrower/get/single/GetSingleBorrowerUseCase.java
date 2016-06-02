@@ -11,7 +11,7 @@ public class GetSingleBorrowerUseCase {
     }
 
     public Borrower execute(String name) {
-        Borrower borrower = borrowersRepository.get(name);
+        Borrower borrower = borrowersRepository.getByName(name);
         if (borrower == null) {
             throw new BorrowerNotFoundException();
         }

@@ -5,7 +5,7 @@ import io.github.maciejbiela.designpatternsproject.core.model.item.Item;
 import java.util.List;
 
 public interface ItemsRepository {
-    Item get(String name);
+    Item getByName(String name);
 
     List<Item> getAll();
 

@@ -23,7 +23,7 @@ public class SimpleBorrowItemsValidator implements BorrowItemsValidator {
     }
 
     private void validateBorrower(Borrower borrower) {
-        if (borrower == null || borrowersRepository.get(borrower.getName()) == null) {
+        if (borrower == null || borrowersRepository.getByName(borrower.getName()) == null) {
             throw new BorrowItemsValidationException();
         }
     }
@@ -38,7 +38,7 @@ public class SimpleBorrowItemsValidator implements BorrowItemsValidator {
     }
 
     private void validateItem(Item item) {
-        if (item == null || itemsRepository.get(item.getName()) == null) {
+        if (item == null || itemsRepository.getByName(item.getName()) == null) {
             throw new BorrowItemsValidationException();
         }
     }

@@ -18,7 +18,7 @@ public class SimpleBorrowersRepository implements BorrowersRepository {
     }
 
     @Override
-    public Borrower get(String name) {
+    public Borrower getByName(String name) {
         return BORROWERS.stream()
                 .filter(borrower -> borrower.getName().equals(name))
                 .findFirst()

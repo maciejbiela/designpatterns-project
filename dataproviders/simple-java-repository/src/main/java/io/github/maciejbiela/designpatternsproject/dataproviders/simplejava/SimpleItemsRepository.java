@@ -19,7 +19,7 @@ public class SimpleItemsRepository implements ItemsRepository {
     }
 
     @Override
-    public Item get(String name) {
+    public Item getByName(String name) {
         return ITEMS.stream()
                 .filter(item -> item.getName().equals(name))
                 .findFirst()

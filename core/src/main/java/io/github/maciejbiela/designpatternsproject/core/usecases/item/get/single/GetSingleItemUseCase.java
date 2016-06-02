@@ -11,7 +11,7 @@ public class GetSingleItemUseCase {
     }
 
     public Item execute(String name) {
-        final Item item = itemsRepository.get(name);
+        final Item item = itemsRepository.getByName(name);
         if (item == null) {
             throw new ItemNotFoundException();
         }
