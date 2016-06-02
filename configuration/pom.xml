@@ -19,8 +19,29 @@
 
     <dependencies>
         <dependency>
+            <groupId>io.github.maciejbiela.designpatterns-project</groupId>
+            <artifactId>core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.maciejbiela.designpatterns-project</groupId>
+            <artifactId>simple-java-repository</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.maciejbiela.designpatterns-project</groupId>
+            <artifactId>entrypoints</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.maciejbiela.designpatterns-project</groupId>
+            <artifactId>rest-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.maciejbiela.designpatterns-project</groupId>
+            <artifactId>rest-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>

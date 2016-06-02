@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class BorrowsController {
+public class BorrowsEndpoint {
     private GetAllBorrowsUseCase getAllBorrowsUseCase;
 
-    public BorrowsController(GetAllBorrowsUseCase getAllBorrowsUseCase) {
+    public BorrowsEndpoint(GetAllBorrowsUseCase getAllBorrowsUseCase) {
         this.getAllBorrowsUseCase = getAllBorrowsUseCase;
     }
 
