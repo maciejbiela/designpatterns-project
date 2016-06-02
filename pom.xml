@@ -10,6 +10,7 @@
         <module>dataproviders/jpa-repository</module>
         <module>dataproviders/simple-java-repository</module>
         <module>entrypoints</module>
+        <module>configuration</module>
     </modules>
     <packaging>pom</packaging>
 
