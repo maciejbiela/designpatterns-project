@@ -9,7 +9,7 @@
         <module>core</module>
         <module>dataproviders/jpa-repository</module>
         <module>dataproviders/simple-java-repository</module>
-        <module>entrypoints/simple-java-client</module>
+        <module>entrypoints</module>
     </modules>
     <packaging>pom</packaging>
 
