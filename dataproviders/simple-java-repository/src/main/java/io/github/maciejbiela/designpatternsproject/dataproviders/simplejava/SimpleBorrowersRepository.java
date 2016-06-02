@@ -20,7 +20,7 @@ public class SimpleBorrowersRepository implements BorrowersRepository {
     @Override
     public Borrower getByName(String name) {
         return BORROWERS.stream()
-                .filter(borrower -> borrower.getName().equals(name))
+                .filter(borrower -> borrower.getName().equalsIgnoreCase(name))
                 .findFirst()
                 .orElse(null);
     }

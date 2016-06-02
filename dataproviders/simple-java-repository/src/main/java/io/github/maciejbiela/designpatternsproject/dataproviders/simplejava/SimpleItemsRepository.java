@@ -21,7 +21,7 @@ public class SimpleItemsRepository implements ItemsRepository {
     @Override
     public Item getByName(String name) {
         return ITEMS.stream()
-                .filter(item -> item.getName().equals(name))
+                .filter(item -> item.getName().equalsIgnoreCase(name))
                 .findFirst()
                 .orElse(null);
     }
