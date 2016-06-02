@@ -8,6 +8,9 @@ public class Item {
     private boolean available;
     private ItemType type;
 
+    public Item() {
+    }
+
     public Item(ItemType type, String name) {
         this.name = name;
         this.available = true;
@@ -26,6 +29,10 @@ public class Item {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public boolean isAvailable() {
         return available;
     }
@@ -36,6 +43,10 @@ public class Item {
 
     public ItemType getType() {
         return type;
+    }
+
+    public void setType(ItemType type) {
+        this.type = type;
     }
 
     public void updateAccordingTo(Item item) {
