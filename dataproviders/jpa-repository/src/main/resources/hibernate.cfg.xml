@@ -32,6 +32,7 @@
         <property name="hbm2ddl.auto">create</property>
 
         <mapping class="io.github.maciejbiela.designpatternsproject.dataproviders.jpa.ItemEntity"/>
+        <mapping class="io.github.maciejbiela.designpatternsproject.dataproviders.jpa.BorrowerEntity"/>
 
     </session-factory>
 

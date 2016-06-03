@@ -8,4 +8,6 @@ public interface BorrowersContract {
     List<Borrower> getAllBorrowers();
 
     Borrower getSingleBorrower(Long id);
+
+    void update(Borrower borrower);
 }
