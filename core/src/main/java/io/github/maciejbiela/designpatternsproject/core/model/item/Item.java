@@ -2,7 +2,7 @@ package io.github.maciejbiela.designpatternsproject.core.model.item;
 
 import java.util.Objects;
 
-public class Item {
+public class Item implements IItem {
     private Long id;
     private String name;
     private boolean available;

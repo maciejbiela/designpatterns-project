@@ -1,6 +1,6 @@
 package io.github.maciejbiela.designpatternsproject.core.usecases.item.add;
 
-import io.github.maciejbiela.designpatternsproject.core.model.item.Item;
+import io.github.maciejbiela.designpatternsproject.core.model.item.IItem;
 import io.github.maciejbiela.designpatternsproject.core.repositories.items.ItemsRepository;
 
 public class AddItemUseCase {
@@ -10,7 +10,7 @@ public class AddItemUseCase {
         this.itemsRepository = itemsRepository;
     }
 
-    public void execute(Item item) {
+    public void execute(IItem item) {
         itemsRepository.update(item);
     }
 }

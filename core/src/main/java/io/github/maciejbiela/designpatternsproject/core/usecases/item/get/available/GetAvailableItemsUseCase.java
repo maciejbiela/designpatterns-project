@@ -1,6 +1,6 @@
 package io.github.maciejbiela.designpatternsproject.core.usecases.item.get.available;
 
-import io.github.maciejbiela.designpatternsproject.core.model.item.Item;
+import io.github.maciejbiela.designpatternsproject.core.model.item.IItem;
 import io.github.maciejbiela.designpatternsproject.core.repositories.items.ItemsRepository;
 
 import java.util.List;
@@ -14,10 +14,10 @@ public class GetAvailableItemsUseCase {
         this.itemsRepository = itemsRepository;
     }
 
-    public List<Item> execute() {
-        final List<Item> allItems = itemsRepository.getAll();
+    public List<IItem> execute() {
+        final List<IItem> allItems = itemsRepository.getAll();
         return allItems.stream()
-                .filter(Item::isAvailable)
+                .filter(IItem::isAvailable)
                 .collect(toList());
     }
 }
