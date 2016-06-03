@@ -6,7 +6,6 @@ import io.github.maciejbiela.designpatternsproject.core.model.item.Item;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 public class Borrow {
     private Long id;
@@ -62,25 +61,5 @@ public class Borrow {
     @Override
     public int hashCode() {
         return Objects.hash(borrower, items, borrowDate);
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder("Borrow[borrower=");
-        builder.append(borrower);
-        builder.append(",items=(");
-        builder.append(getItemsAsString());
-        builder.append("),borrowDate=");
-        builder.append(borrowDate);
-        if (returnDate != null) {
-            builder.append(",returnDate=");
-            builder.append(returnDate);
-        }
-        builder.append("]");
-        return builder.toString();
-    }
-
-    private String getItemsAsString() {
-        return items.stream().map(Item::toString).collect(Collectors.joining(","));
     }
 }

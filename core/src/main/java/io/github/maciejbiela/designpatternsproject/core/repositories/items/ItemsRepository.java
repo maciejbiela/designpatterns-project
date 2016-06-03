@@ -1,13 +1,13 @@
 package io.github.maciejbiela.designpatternsproject.core.repositories.items;
 
-import io.github.maciejbiela.designpatternsproject.core.model.item.IItem;
+import io.github.maciejbiela.designpatternsproject.core.model.item.Item;
 
 import java.util.List;
 
 public interface ItemsRepository {
-    IItem get(Long id);
+    Item get(Long id);
 
-    List<IItem> getAll();
+    List<Item> getAll();
 
-    void update(IItem item);
+    void update(Item item);
 }

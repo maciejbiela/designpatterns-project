@@ -1,6 +1,6 @@
 package io.github.maciejbiela.designpatternsproject.entrypoints.rest;
 
-import io.github.maciejbiela.designpatternsproject.core.model.item.IItem;
+import io.github.maciejbiela.designpatternsproject.core.model.item.Item;
 import io.github.maciejbiela.designpatternsproject.core.usecases.item.ItemUseCases;
 import io.github.maciejbiela.designpatternsproject.entrypoints.contract.ItemsContract;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,19 +21,19 @@ public class ItemsEndpoint implements ItemsContract {
 
     @Override
     @RequestMapping(method = RequestMethod.GET, value = "/items")
-    public List<IItem> getAllItems() {
+    public List<Item> getAllItems() {
         return itemUseCases.getAllItemsUseCase().execute();
     }
 
     @Override
     @RequestMapping(method = RequestMethod.GET, value = "/item/{id}")
-    public IItem getSingleItem(@PathVariable Long id) {
+    public Item getSingleItem(@PathVariable Long id) {
         return itemUseCases.getSingleItemUseCase().execute(id);
     }
 
     @Override
     @RequestMapping(method = RequestMethod.POST, value = "/item", consumes = {"application/json"})
-    public void update(@RequestBody IItem item) {
+    public void update(@RequestBody Item item) {
         itemUseCases.addItemUseCase().execute(item);
     }
 }

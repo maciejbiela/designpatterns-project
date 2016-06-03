@@ -1,6 +1,6 @@
 package io.github.maciejbiela.designpatternsproject.dataproviders.jpa;
 
-import io.github.maciejbiela.designpatternsproject.core.model.item.IItem;
+import io.github.maciejbiela.designpatternsproject.core.model.item.Item;
 import io.github.maciejbiela.designpatternsproject.core.repositories.items.ItemsRepository;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -10,7 +10,7 @@ import java.util.List;
 public class JpaItemsRepository implements ItemsRepository {
 
     @Override
-    public IItem get(Long id) {
+    public Item get(Long id) {
         SessionFactory sessionFactory = HibernateHelper.INSTANCE.getSessionFactory();
         Session session = sessionFactory.openSession();
         final ItemEntity itemEntity = session.get(ItemEntity.class, id);
@@ -19,14 +19,14 @@ public class JpaItemsRepository implements ItemsRepository {
     }
 
     @Override
-    public List<IItem> getAll() {
+    public List<Item> getAll() {
         SessionFactory sessionFactory = HibernateHelper.INSTANCE.getSessionFactory();
         Session session = sessionFactory.openSession();
         return session.createCriteria(ItemEntity.class).list();
     }
 
     @Override
-    public void update(IItem item) {
+    public void update(Item item) {
         ItemEntity itemEntity = new ItemEntity();
         itemEntity.setId(item.getId());
         itemEntity.setName(item.getName());

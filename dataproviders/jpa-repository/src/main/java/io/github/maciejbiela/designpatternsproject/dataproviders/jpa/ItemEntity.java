@@ -1,6 +1,6 @@
 package io.github.maciejbiela.designpatternsproject.dataproviders.jpa;
 
-import io.github.maciejbiela.designpatternsproject.core.model.item.IItem;
+import io.github.maciejbiela.designpatternsproject.core.model.item.Item;
 import io.github.maciejbiela.designpatternsproject.core.model.item.ItemType;
 
 import javax.persistence.Basic;
@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Items")
-public class ItemEntity implements IItem {
+public class ItemEntity implements Item {
     @Id
     @GeneratedValue
     private Long id;
@@ -24,7 +24,6 @@ public class ItemEntity implements IItem {
 
     @Basic
     private ItemType type;
-
 
     @Override
     public Long getId() {
@@ -56,10 +55,12 @@ public class ItemEntity implements IItem {
         this.available = available;
     }
 
+    @Override
     public ItemType getType() {
         return type;
     }
 
+    @Override
     public void setType(ItemType itemType) {
         this.type = itemType;
     }

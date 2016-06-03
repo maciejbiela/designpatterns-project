@@ -1,13 +1,13 @@
 package io.github.maciejbiela.designpatternsproject.entrypoints.contract;
 
-import io.github.maciejbiela.designpatternsproject.core.model.item.IItem;
+import io.github.maciejbiela.designpatternsproject.core.model.item.Item;
 
 import java.util.List;
 
 public interface ItemsContract {
-    List<IItem> getAllItems();
+    List<Item> getAllItems();
 
-    IItem getSingleItem(Long id);
+    Item getSingleItem(Long id);
 
-    void update(IItem item);
+    void update(Item item);
 }
