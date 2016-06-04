@@ -5,7 +5,6 @@ import io.github.maciejbiela.designpatternsproject.core.repositories.borrow.Borr
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class SimpleBorrowsRepository implements BorrowsRepository {
     private static final List<Borrow> BORROWS = new ArrayList<>();
@@ -17,14 +16,16 @@ public class SimpleBorrowsRepository implements BorrowsRepository {
 
     @Override
     public void update(Borrow borrow) {
-        final Optional<Borrow> possiblyExistingBorrow = BORROWS.stream()
-                .filter(b -> b.getId().equals(borrow.getId()))
-                .findFirst();
-        if (possiblyExistingBorrow.isPresent()) {
-            possiblyExistingBorrow.get().updateAccordingTo(borrow);
-        } else {
-            borrow.setId((long) BORROWS.size());
-            BORROWS.add(borrow);
-        }
+
+    }
+
+    @Override
+    public Borrow createNewBorrow() {
+        return null;
+    }
+
+    @Override
+    public Borrow get(Long id) {
+        return null;
     }
 }

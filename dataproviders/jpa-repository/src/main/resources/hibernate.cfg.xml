@@ -31,7 +31,10 @@
         <!-- Drop and re-create the database schema on startup -->
         <property name="hbm2ddl.auto">create</property>
 
+        <property name="lazy">false</property>
+
         <mapping class="io.github.maciejbiela.designpatternsproject.dataproviders.jpa.ItemEntity"/>
+        <mapping class="io.github.maciejbiela.designpatternsproject.dataproviders.jpa.BorrowEntity"/>
         <mapping class="io.github.maciejbiela.designpatternsproject.dataproviders.jpa.BorrowerEntity"/>
 
     </session-factory>

@@ -20,8 +20,8 @@ public class ContractsConfiguration {
     }
 
     @Bean
-    BorrowersContract borrowersContract(BorrowerUseCases borrowerUseCases) {
-        return new BorrowersEndpoint(borrowerUseCases);
+    BorrowersContract borrowersContract(BorrowerUseCases borrowerUseCases, ItemUseCases itemUseCases) {
+        return new BorrowersEndpoint(borrowerUseCases, itemUseCases);
     }
 
     @Bean

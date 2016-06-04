@@ -3,6 +3,7 @@ package io.github.maciejbiela.designpatternsproject.entrypoints.rest;
 import io.github.maciejbiela.designpatternsproject.core.model.borrow.Borrow;
 import io.github.maciejbiela.designpatternsproject.core.usecases.borrow.BorrowUseCases;
 import io.github.maciejbiela.designpatternsproject.entrypoints.contract.BorrowsContract;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,5 +21,10 @@ public class BorrowsEndpoint implements BorrowsContract {
     @RequestMapping("/borrows")
     public List<Borrow> getAllBorrows() {
         return borrowUseCases.getAllBorrowsUseCase().execute();
+    }
+
+    @RequestMapping("/borrows/{id}/return")
+    public void returnBorrow(@PathVariable Long id) {
+        borrowUseCases.returnBorrowUseCase().execute(id);
     }
 }

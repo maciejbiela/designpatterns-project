@@ -3,7 +3,6 @@ package io.github.maciejbiela.designpatternsproject.core.usecases.borrow;
 import io.github.maciejbiela.designpatternsproject.core.repositories.borrow.BorrowsRepository;
 import io.github.maciejbiela.designpatternsproject.core.repositories.borrowers.BorrowersRepository;
 import io.github.maciejbiela.designpatternsproject.core.repositories.items.ItemsRepository;
-import io.github.maciejbiela.designpatternsproject.core.usecases.borrow.borrowitems.BorrowItemsUseCase;
 import io.github.maciejbiela.designpatternsproject.core.usecases.borrow.get.all.GetAllBorrowsUseCase;
 import io.github.maciejbiela.designpatternsproject.core.usecases.borrow.returnborrow.ReturnBorrowUseCase;
 
@@ -16,10 +15,6 @@ public class BorrowUseCases {
         this.borrowsRepository = borrowsRepository;
         this.borrowersRepository = borrowersRepository;
         this.itemsRepository = itemsRepository;
-    }
-
-    public BorrowItemsUseCase borrowItemsUseCase() {
-        return new BorrowItemsUseCase(borrowersRepository, borrowsRepository, itemsRepository);
     }
 
     public GetAllBorrowsUseCase getAllBorrowsUseCase() {

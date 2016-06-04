@@ -27,7 +27,7 @@ public class SimpleReturnBorrowValidator {
     }
 
     private void validateBorrow(Borrow borrow) {
-        if (borrow == null || !borrowsRepository.getAll().contains(borrow)) {
+        if (borrow == null || borrowsRepository.get(borrow.getId()) == null) {
             throw new ReturnBorrowValidationException();
         }
     }
@@ -42,9 +42,7 @@ public class SimpleReturnBorrowValidator {
         if (items == null) {
             throw new ReturnBorrowValidationException();
         }
-        for (Item item : items) {
-            validateItem(item);
-        }
+        items.forEach(this::validateItem);
     }
 
     private void validateItem(Item item) {

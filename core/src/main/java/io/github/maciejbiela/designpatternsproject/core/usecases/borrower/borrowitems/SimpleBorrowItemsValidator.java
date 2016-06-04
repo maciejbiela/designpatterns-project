@@ -1,4 +1,4 @@
-package io.github.maciejbiela.designpatternsproject.core.usecases.borrow.borrowitems;
+package io.github.maciejbiela.designpatternsproject.core.usecases.borrower.borrowitems;
 
 import io.github.maciejbiela.designpatternsproject.core.model.borrower.Borrower;
 import io.github.maciejbiela.designpatternsproject.core.model.item.Item;
@@ -38,7 +38,7 @@ public class SimpleBorrowItemsValidator implements BorrowItemsValidator {
     }
 
     private void validateItem(Item item) {
-        if (item == null || itemsRepository.get(item.getId()) == null) {
+        if (item == null || itemsRepository.get(item.getId()) == null || !itemsRepository.get(item.getId()).isAvailable()) {
             throw new BorrowItemsValidationException();
         }
     }

@@ -5,61 +5,25 @@ import io.github.maciejbiela.designpatternsproject.core.model.item.Item;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Objects;
 
-public class Borrow {
-    private Long id;
-    private final Borrower borrower;
-    private final List<Item> items;
-    private final LocalDate borrowDate;
-    private LocalDate returnDate;
+public interface Borrow {
+    Long getId();
 
-    public Borrow(Borrower borrower, List<Item> items, LocalDate borrowDate) {
-        this.borrowDate = borrowDate;
-        this.items = items;
-        this.borrower = borrower;
-    }
+    void setId(Long id);
 
-    public Long getId() {
-        return id;
-    }
+    Borrower getBorrower();
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    void setBorrower(Borrower borrower);
 
-    public Borrower getBorrower() {
-        return borrower;
-    }
+    List<Item> getItems();
 
-    public List<Item> getItems() {
-        return items;
-    }
+    void setItems(List<Item> items);
 
-    public LocalDate getReturnDate() {
-        return returnDate;
-    }
+    LocalDate getBorrowDate();
 
-    public void setReturnDate(LocalDate returnDate) {
-        this.returnDate = returnDate;
-    }
+    void setBorrowDate(LocalDate borrowDate);
 
-    public void updateAccordingTo(Borrow borrow) {
-        this.returnDate = borrow.returnDate;
-    }
+    LocalDate getReturnDate();
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Borrow)) return false;
-        Borrow borrow = (Borrow) o;
-        return Objects.equals(borrower, borrow.borrower) &&
-                Objects.equals(items, borrow.items) &&
-                Objects.equals(borrowDate, borrow.borrowDate);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(borrower, items, borrowDate);
-    }
+    void setReturnDate(LocalDate returnDate);
 }

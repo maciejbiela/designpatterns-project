@@ -20,7 +20,7 @@ public class ItemEntity implements Item {
     private String name;
 
     @Basic
-    private boolean available;
+    private boolean available = true;
 
     @Basic
     private ItemType type;
