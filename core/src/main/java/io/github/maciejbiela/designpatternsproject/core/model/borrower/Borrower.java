@@ -1,10 +1,8 @@
 package io.github.maciejbiela.designpatternsproject.core.model.borrower;
 
-public interface Borrower {
-    Long getId();
+import io.github.maciejbiela.designpatternsproject.core.model.WithId;
 
-    void setId(Long id);
-
+public interface Borrower extends WithId {
     String getName();
 
     void setName(String name);

@@ -5,9 +5,9 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 import io.github.maciejbiela.designpatternsproject.core.model.borrow.Borrow;
 import io.github.maciejbiela.designpatternsproject.core.model.borrower.Borrower;
 import io.github.maciejbiela.designpatternsproject.core.model.item.Item;
-import io.github.maciejbiela.designpatternsproject.dataproviders.jpa.model.BorrowEntity;
-import io.github.maciejbiela.designpatternsproject.dataproviders.jpa.model.BorrowerEntity;
-import io.github.maciejbiela.designpatternsproject.dataproviders.jpa.model.ItemEntity;
+import io.github.maciejbiela.designpatternsproject.dataproviders.simplejava.model.BorrowImpl;
+import io.github.maciejbiela.designpatternsproject.dataproviders.simplejava.model.BorrowerImpl;
+import io.github.maciejbiela.designpatternsproject.dataproviders.simplejava.model.ItemImpl;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
@@ -19,15 +19,15 @@ public class JsonDeserializationConfiguration extends SimpleModule {
         context.setMixInAnnotations(Item.class, ItemMixIn.class);
     }
 
-    @JsonDeserialize(as = BorrowEntity.class)
+    @JsonDeserialize(as = BorrowImpl.class)
     private class BorrowMixIn {
     }
 
-    @JsonDeserialize(as = BorrowerEntity.class)
+    @JsonDeserialize(as = BorrowerImpl.class)
     private class BorrowerMixIn {
     }
 
-    @JsonDeserialize(as = ItemEntity.class)
+    @JsonDeserialize(as = ItemImpl.class)
     private class ItemMixIn {
     }
 

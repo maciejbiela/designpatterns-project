@@ -1,16 +1,13 @@
 package io.github.maciejbiela.designpatternsproject.core.model.borrow;
 
+import io.github.maciejbiela.designpatternsproject.core.model.WithId;
 import io.github.maciejbiela.designpatternsproject.core.model.borrower.Borrower;
 import io.github.maciejbiela.designpatternsproject.core.model.item.Item;
 
 import java.time.LocalDate;
 import java.util.List;
 
-public interface Borrow {
-    Long getId();
-
-    void setId(Long id);
-
+public interface Borrow extends WithId {
     Borrower getBorrower();
 
     void setBorrower(Borrower borrower);

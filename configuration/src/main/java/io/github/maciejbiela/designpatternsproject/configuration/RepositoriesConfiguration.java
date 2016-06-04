@@ -3,9 +3,9 @@ package io.github.maciejbiela.designpatternsproject.configuration;
 import io.github.maciejbiela.designpatternsproject.core.repositories.borrow.BorrowsRepository;
 import io.github.maciejbiela.designpatternsproject.core.repositories.borrowers.BorrowersRepository;
 import io.github.maciejbiela.designpatternsproject.core.repositories.items.ItemsRepository;
-import io.github.maciejbiela.designpatternsproject.dataproviders.jpa.repositories.JpaBorrowersRepository;
-import io.github.maciejbiela.designpatternsproject.dataproviders.jpa.repositories.JpaBorrowsRepository;
-import io.github.maciejbiela.designpatternsproject.dataproviders.jpa.repositories.JpaItemsRepository;
+import io.github.maciejbiela.designpatternsproject.dataproviders.simplejava.repositories.SimpleBorrowersRepository;
+import io.github.maciejbiela.designpatternsproject.dataproviders.simplejava.repositories.SimpleBorrowsRepository;
+import io.github.maciejbiela.designpatternsproject.dataproviders.simplejava.repositories.SimpleItemsRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,16 +13,16 @@ import org.springframework.context.annotation.Configuration;
 public class RepositoriesConfiguration {
     @Bean
     public BorrowersRepository borrowersRepository() {
-        return new JpaBorrowersRepository();
+        return new SimpleBorrowersRepository();
     }
 
     @Bean
     public BorrowsRepository borrowsRepository() {
-        return new JpaBorrowsRepository();
+        return new SimpleBorrowsRepository();
     }
 
     @Bean
     public ItemsRepository itemsRepository() {
-        return new JpaItemsRepository();
+        return new SimpleItemsRepository();
     }
 }

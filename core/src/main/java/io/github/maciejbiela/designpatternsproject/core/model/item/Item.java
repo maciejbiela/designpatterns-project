@@ -1,10 +1,8 @@
 package io.github.maciejbiela.designpatternsproject.core.model.item;
 
-public interface Item {
-    Long getId();
+import io.github.maciejbiela.designpatternsproject.core.model.WithId;
 
-    void setId(Long id);
-
+public interface Item extends WithId {
     String getName();
 
     void setName(String name);
