@@ -1,4 +1,4 @@
-package io.github.maciejbiela.designpatternsproject.dataproviders.jpa;
+package io.github.maciejbiela.designpatternsproject.dataproviders.jpa.model;
 
 import io.github.maciejbiela.designpatternsproject.core.model.borrow.Borrow;
 import io.github.maciejbiela.designpatternsproject.core.model.borrower.Borrower;

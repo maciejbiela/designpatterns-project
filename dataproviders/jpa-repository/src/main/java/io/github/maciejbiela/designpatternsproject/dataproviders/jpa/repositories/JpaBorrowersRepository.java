@@ -1,7 +1,9 @@
-package io.github.maciejbiela.designpatternsproject.dataproviders.jpa;
+package io.github.maciejbiela.designpatternsproject.dataproviders.jpa.repositories;
 
 import io.github.maciejbiela.designpatternsproject.core.model.borrower.Borrower;
 import io.github.maciejbiela.designpatternsproject.core.repositories.borrowers.BorrowersRepository;
+import io.github.maciejbiela.designpatternsproject.dataproviders.jpa.model.BorrowerEntity;
+import io.github.maciejbiela.designpatternsproject.dataproviders.jpa.utilities.HibernateUtility;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -10,7 +12,7 @@ import java.util.List;
 public class JpaBorrowersRepository implements BorrowersRepository {
     @Override
     public Borrower get(Long id) {
-        SessionFactory sessionFactory = HibernateHelper.INSTANCE.getSessionFactory();
+        SessionFactory sessionFactory = HibernateUtility.INSTANCE.getSessionFactory();
         Session session = sessionFactory.openSession();
         final BorrowerEntity borrowerEntity = session.get(BorrowerEntity.class, id);
         session.close();
@@ -19,7 +21,7 @@ public class JpaBorrowersRepository implements BorrowersRepository {
 
     @Override
     public List<Borrower> getAll() {
-        SessionFactory sessionFactory = HibernateHelper.INSTANCE.getSessionFactory();
+        SessionFactory sessionFactory = HibernateUtility.INSTANCE.getSessionFactory();
         Session session = sessionFactory.openSession();
         return session.createCriteria(BorrowerEntity.class).list();
     }
@@ -30,7 +32,7 @@ public class JpaBorrowersRepository implements BorrowersRepository {
         borrowerEntity.setId(borrower.getId());
         borrowerEntity.setName(borrower.getName());
         borrowerEntity.setType(borrower.getType());
-        SessionFactory sessionFactory = HibernateHelper.INSTANCE.getSessionFactory();
+        SessionFactory sessionFactory = HibernateUtility.INSTANCE.getSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         session.saveOrUpdate(borrowerEntity);

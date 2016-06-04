@@ -33,9 +33,9 @@
 
         <property name="lazy">false</property>
 
-        <mapping class="io.github.maciejbiela.designpatternsproject.dataproviders.jpa.ItemEntity"/>
-        <mapping class="io.github.maciejbiela.designpatternsproject.dataproviders.jpa.BorrowEntity"/>
-        <mapping class="io.github.maciejbiela.designpatternsproject.dataproviders.jpa.BorrowerEntity"/>
+        <mapping class="io.github.maciejbiela.designpatternsproject.dataproviders.jpa.model.ItemEntity"/>
+        <mapping class="io.github.maciejbiela.designpatternsproject.dataproviders.jpa.model.BorrowEntity"/>
+        <mapping class="io.github.maciejbiela.designpatternsproject.dataproviders.jpa.model.BorrowerEntity"/>
 
     </session-factory>
 

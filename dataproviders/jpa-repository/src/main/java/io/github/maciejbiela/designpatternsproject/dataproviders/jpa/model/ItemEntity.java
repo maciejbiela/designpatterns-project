@@ -1,4 +1,4 @@
-package io.github.maciejbiela.designpatternsproject.dataproviders.jpa;
+package io.github.maciejbiela.designpatternsproject.dataproviders.jpa.model;
 
 import io.github.maciejbiela.designpatternsproject.core.model.item.Item;
 import io.github.maciejbiela.designpatternsproject.core.model.item.ItemType;

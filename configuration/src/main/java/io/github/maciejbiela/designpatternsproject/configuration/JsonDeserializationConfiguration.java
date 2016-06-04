@@ -5,9 +5,9 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 import io.github.maciejbiela.designpatternsproject.core.model.borrow.Borrow;
 import io.github.maciejbiela.designpatternsproject.core.model.borrower.Borrower;
 import io.github.maciejbiela.designpatternsproject.core.model.item.Item;
-import io.github.maciejbiela.designpatternsproject.dataproviders.jpa.BorrowEntity;
-import io.github.maciejbiela.designpatternsproject.dataproviders.jpa.BorrowerEntity;
-import io.github.maciejbiela.designpatternsproject.dataproviders.jpa.ItemEntity;
+import io.github.maciejbiela.designpatternsproject.dataproviders.jpa.model.BorrowEntity;
+import io.github.maciejbiela.designpatternsproject.dataproviders.jpa.model.BorrowerEntity;
+import io.github.maciejbiela.designpatternsproject.dataproviders.jpa.model.ItemEntity;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration

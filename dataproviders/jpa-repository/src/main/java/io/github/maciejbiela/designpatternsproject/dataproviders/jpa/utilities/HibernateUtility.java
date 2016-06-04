@@ -1,14 +1,14 @@
-package io.github.maciejbiela.designpatternsproject.dataproviders.jpa;
+package io.github.maciejbiela.designpatternsproject.dataproviders.jpa.utilities;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public enum HibernateHelper {
+public enum HibernateUtility {
     INSTANCE;
 
     private SessionFactory sessionFactory;
 
-    HibernateHelper() {
+    HibernateUtility() {
         this.sessionFactory = new Configuration().configure("/hibernate.cfg.xml").buildSessionFactory();
     }
 
