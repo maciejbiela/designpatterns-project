@@ -1,4 +1,4 @@
-package io.github.maciejbiela.designpatternsproject.core.usecases.borrow.borrowitems;
+package io.github.maciejbiela.designpatternsproject.core.usecases.borrower.borrowitems;
 
 import io.github.maciejbiela.designpatternsproject.core.model.borrower.Borrower;
 import io.github.maciejbiela.designpatternsproject.core.model.item.Item;

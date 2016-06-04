@@ -19,7 +19,8 @@ public class ReturnBorrowUseCase {
         this.itemsRepository = itemsRepository;
     }
 
-    public Borrow execute(Borrow borrow) {
+    public Borrow execute(Long id) {
+        final Borrow borrow = borrowsRepository.get(id);
         final SimpleReturnBorrowValidator simpleReturnBorrowValidator = new SimpleReturnBorrowValidator(borrowersRepository, borrowsRepository, itemsRepository);
         simpleReturnBorrowValidator.validate(borrow);
         setItemsAsReturned(borrow);
@@ -29,9 +30,7 @@ public class ReturnBorrowUseCase {
     }
 
     private void setItemsAsReturned(Borrow borrow) {
-        for (Item item : borrow.getItems()) {
-            setItemAsReturned(item);
-        }
+        borrow.getItems().forEach(this::setItemAsReturned);
     }
 
     private void setItemAsReturned(Item item) {

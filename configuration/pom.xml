@@ -28,6 +28,10 @@
         </dependency>
         <dependency>
             <groupId>io.github.maciejbiela.designpatterns-project</groupId>
+            <artifactId>jpa-repository</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.maciejbiela.designpatterns-project</groupId>
             <artifactId>rest-api</artifactId>
         </dependency>
         <dependency>

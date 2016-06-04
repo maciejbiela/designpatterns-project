@@ -1,58 +1,13 @@
 package io.github.maciejbiela.designpatternsproject.core.model.borrower;
 
-import java.util.Objects;
+import io.github.maciejbiela.designpatternsproject.core.model.WithId;
 
-public class Borrower {
-    private Long id;
-    private String name;
-    private BorrowerType type;
+public interface Borrower extends WithId {
+    String getName();
 
-    public Borrower(BorrowerType type, String name) {
-        this.name = name;
-        this.type = type;
-    }
+    void setName(String name);
 
-    public Long getId() {
-        return id;
-    }
+    BorrowerType getType();
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public BorrowerType getType() {
-        return type;
-    }
-
-    public void updateAccordingTo(Borrower borrower) {
-        this.name = borrower.name;
-        this.type = borrower.type;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Borrower borrower = (Borrower) o;
-        return Objects.equals(name, borrower.name) &&
-                type == borrower.type;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, type);
-    }
-
-    @Override
-    public String toString() {
-        return type + "[name='" + name + "']";
-    }
+    void setType(BorrowerType type);
 }

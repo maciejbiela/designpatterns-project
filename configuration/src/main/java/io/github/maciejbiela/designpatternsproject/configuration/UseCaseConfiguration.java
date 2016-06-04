@@ -17,8 +17,8 @@ public class UseCaseConfiguration {
     }
 
     @Bean
-    public BorrowerUseCases borrowerUseCases(BorrowsRepository borrowsRepository, BorrowersRepository borrowersRepository) {
-        return new BorrowerUseCases(borrowsRepository, borrowersRepository);
+    public BorrowerUseCases borrowerUseCases(BorrowsRepository borrowsRepository, BorrowersRepository borrowersRepository, ItemsRepository itemsRepository) {
+        return new BorrowerUseCases(borrowsRepository, borrowersRepository, itemsRepository);
     }
 
     @Bean

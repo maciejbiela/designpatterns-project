@@ -1,4 +1,4 @@
-package io.github.maciejbiela.designpatternsproject.core.usecases.borrow.borrowitems;
+package io.github.maciejbiela.designpatternsproject.core.usecases.borrower.borrowitems;
 
 import io.github.maciejbiela.designpatternsproject.core.model.borrow.Borrow;
 import io.github.maciejbiela.designpatternsproject.core.model.borrower.Borrower;
@@ -7,10 +7,9 @@ import io.github.maciejbiela.designpatternsproject.core.repositories.borrow.Borr
 import io.github.maciejbiela.designpatternsproject.core.repositories.borrowers.BorrowersRepository;
 import io.github.maciejbiela.designpatternsproject.core.repositories.items.ItemsRepository;
 
+import java.time.LocalDate;
 import java.util.Collections;
 import java.util.List;
-
-import static java.time.LocalDate.now;
 
 public class BorrowItemsUseCase {
     private final BorrowersRepository borrowersRepository;
@@ -32,7 +31,10 @@ public class BorrowItemsUseCase {
         final SimpleBorrowItemsValidator simpleBorrowItemsValidator = new SimpleBorrowItemsValidator(borrowersRepository, itemsRepository);
         simpleBorrowItemsValidator.validate(borrower, items);
         setItemsAsBorrowed(items);
-        final Borrow borrow = new Borrow(borrower, items, now());
+        final Borrow borrow = borrowsRepository.createNewBorrow();
+        borrow.setBorrowDate(LocalDate.now());
+        borrow.setBorrower(borrower);
+        borrow.setItems(items);
         borrowsRepository.update(borrow);
         return borrow;
     }
