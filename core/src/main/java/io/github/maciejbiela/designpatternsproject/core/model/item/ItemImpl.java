@@ -12,6 +12,12 @@ public class ItemImpl implements Item {
         this.available = true;
     }
 
+    public ItemImpl(String name, ItemType type, boolean available) {
+        this.name = name;
+        this.available = available;
+        this.type = type;
+    }
+
     @Override
     public Long getId() {
         return id;
