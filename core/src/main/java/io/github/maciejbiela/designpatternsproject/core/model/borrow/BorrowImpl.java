@@ -1,6 +1,5 @@
-package io.github.maciejbiela.designpatternsproject.dataproviders.simplejava.model;
+package io.github.maciejbiela.designpatternsproject.core.model.borrow;
 
-import io.github.maciejbiela.designpatternsproject.core.model.borrow.Borrow;
 import io.github.maciejbiela.designpatternsproject.core.model.borrower.Borrower;
 import io.github.maciejbiela.designpatternsproject.core.model.item.Item;
 

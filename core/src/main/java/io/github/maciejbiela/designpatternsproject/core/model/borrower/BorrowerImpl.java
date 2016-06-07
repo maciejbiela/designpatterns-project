@@ -1,7 +1,4 @@
-package io.github.maciejbiela.designpatternsproject.dataproviders.simplejava.model;
-
-import io.github.maciejbiela.designpatternsproject.core.model.borrower.Borrower;
-import io.github.maciejbiela.designpatternsproject.core.model.borrower.BorrowerType;
+package io.github.maciejbiela.designpatternsproject.core.model.borrower;
 
 public class BorrowerImpl implements Borrower {
     private Long id;

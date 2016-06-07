@@ -1,8 +1,8 @@
 package io.github.maciejbiela.designpatternsproject.dataproviders.simplejava.repositories;
 
 import io.github.maciejbiela.designpatternsproject.core.model.item.Item;
+import io.github.maciejbiela.designpatternsproject.core.model.item.ItemImpl;
 import io.github.maciejbiela.designpatternsproject.core.repositories.items.ItemsRepository;
-import io.github.maciejbiela.designpatternsproject.dataproviders.simplejava.model.ItemImpl;
 
 import java.util.ArrayList;
 import java.util.List;

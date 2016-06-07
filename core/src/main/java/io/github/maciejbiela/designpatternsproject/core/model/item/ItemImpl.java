@@ -1,7 +1,4 @@
-package io.github.maciejbiela.designpatternsproject.dataproviders.simplejava.model;
-
-import io.github.maciejbiela.designpatternsproject.core.model.item.Item;
-import io.github.maciejbiela.designpatternsproject.core.model.item.ItemType;
+package io.github.maciejbiela.designpatternsproject.core.model.item;
 
 public class ItemImpl implements Item {
     private Long id;

@@ -1,8 +1,8 @@
 package io.github.maciejbiela.designpatternsproject.dataproviders.simplejava.repositories;
 
 import io.github.maciejbiela.designpatternsproject.core.model.borrow.Borrow;
+import io.github.maciejbiela.designpatternsproject.core.model.borrow.BorrowImpl;
 import io.github.maciejbiela.designpatternsproject.core.repositories.borrow.BorrowsRepository;
-import io.github.maciejbiela.designpatternsproject.dataproviders.simplejava.model.BorrowImpl;
 
 import java.util.ArrayList;
 import java.util.List;
