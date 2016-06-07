@@ -21,6 +21,9 @@
         <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
         <maven-compiler.source>1.8</maven-compiler.source>
         <maven-compiler.target>1.8</maven-compiler.target>
+        <junit.version>4.12</junit.version>
+        <mockito-core.version>1.10.19</mockito-core.version>
+        <assertj-core.version>3.4.1</assertj-core.version>
         <spring-boot-starter-web.version>1.3.5.RELEASE</spring-boot-starter-web.version>
         <hibernate-core.version>5.2.0.Final</hibernate-core.version>
         <h2.version>1.4.192</h2.version>
@@ -71,6 +74,21 @@
                 <groupId>io.github.maciejbiela.designpatterns-project</groupId>
                 <artifactId>simple-java-client</artifactId>
                 <version>${project.parent.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.assertj</groupId>
+                <artifactId>assertj-core</artifactId>
+                <version>${assertj-core.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
