@@ -2,6 +2,7 @@ package io.github.maciejbiela.designpatternsproject.entrypoints.rest;
 
 import io.github.maciejbiela.designpatternsproject.core.model.item.Item;
 import io.github.maciejbiela.designpatternsproject.core.usecases.item.ItemUseCases;
+import io.github.maciejbiela.designpatternsproject.core.usecases.item.get.single.ItemNotFoundException;
 import io.github.maciejbiela.designpatternsproject.entrypoints.contract.ItemsContract;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,7 +29,11 @@ public class ItemsEndpoint implements ItemsContract {
     @Override
     @RequestMapping(method = RequestMethod.GET, value = "/item/{id}")
     public Item getSingleItem(@PathVariable Long id) {
-        return itemUseCases.getSingleItemUseCase().execute(id);
+        try {
+            return itemUseCases.getSingleItemUseCase().execute(id);
+        } catch (ItemNotFoundException e) {
+            throw new NotFoundException();
+        }
     }
 
     @Override
