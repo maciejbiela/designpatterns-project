@@ -7,16 +7,17 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>entrypoints</artifactId>
+    <artifactId>application</artifactId>
     <modules>
-        <module>simple-java-client</module>
-        <module>rest-api</module>
-        <module>contract</module>
+        <module>configuration</module>
+        <module>core</module>
+        <module>dataproviders</module>
+        <module>entrypoints</module>
     </modules>
     <packaging>pom</packaging>
 
-    <name>entrypoints</name>
-    <url>http://maciejbiela.github.io</url>
+    <name>application</name>
+    <url>http://maven.apache.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

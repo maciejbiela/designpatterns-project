@@ -6,10 +6,8 @@
     <artifactId>designpatterns-project</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>core</module>
-        <module>entrypoints</module>
-        <module>configuration</module>
-        <module>dataproviders</module>
+        <module>application</module>
+        <module>integration-tests</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -1,0 +1,25 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>application</artifactId>
+        <groupId>io.github.maciejbiela.designpatterns-project</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>entrypoints</artifactId>
+    <modules>
+        <module>simple-java-client</module>
+        <module>rest-api</module>
+        <module>contract</module>
+    </modules>
+    <packaging>pom</packaging>
+
+    <name>entrypoints</name>
+    <url>http://maciejbiela.github.io</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+</project>

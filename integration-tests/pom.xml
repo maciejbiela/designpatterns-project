@@ -7,18 +7,21 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>dataproviders</artifactId>
-    <modules>
-        <module>jpa-repository</module>
-        <module>simple-java-repository</module>
-    </modules>
-    <packaging>pom</packaging>
+    <artifactId>integration-tests</artifactId>
+    <packaging>jar</packaging>
 
-    <name>dataproviders</name>
+    <name>integration-tests</name>
     <url>http://maven.apache.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.github.maciejbiela.designpatterns-project</groupId>
+            <artifactId>jpa-repository</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
