@@ -20,7 +20,19 @@
     <dependencies>
         <dependency>
             <groupId>io.github.maciejbiela.designpatterns-project</groupId>
+            <artifactId>configuration</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.maciejbiela.designpatterns-project</groupId>
             <artifactId>jpa-repository</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-library</artifactId>
         </dependency>
     </dependencies>
 
