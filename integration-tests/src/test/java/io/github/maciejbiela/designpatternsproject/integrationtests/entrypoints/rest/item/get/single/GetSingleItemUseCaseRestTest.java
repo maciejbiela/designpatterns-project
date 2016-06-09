@@ -1,4 +1,4 @@
-package io.github.maciejbiela.designpatternsproject.integration.entrypoints.rest;
+package io.github.maciejbiela.designpatternsproject.integrationtests.entrypoints.rest.item.get.single;
 
 import io.github.maciejbiela.designpatternsproject.core.model.item.Item;
 import io.github.maciejbiela.designpatternsproject.core.model.item.ItemImpl;
@@ -7,6 +7,7 @@ import io.github.maciejbiela.designpatternsproject.core.usecases.item.ItemUseCas
 import io.github.maciejbiela.designpatternsproject.core.usecases.item.get.single.GetSingleItemUseCase;
 import io.github.maciejbiela.designpatternsproject.core.usecases.item.get.single.ItemNotFoundException;
 import io.github.maciejbiela.designpatternsproject.entrypoints.rest.ItemsEndpoint;
+import io.github.maciejbiela.designpatternsproject.integrationtests.entrypoints.rest.Response;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.mock.web.MockHttpServletResponse;
