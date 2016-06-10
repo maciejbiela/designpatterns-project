@@ -1,8 +1,9 @@
-package io.github.maciejbiela.designpatternsproject.core.usecases.borrow.get.all;
+package io.github.maciejbiela.designpatternsproject.core.usecasestests.borrow.get.all;
 
 import io.github.maciejbiela.designpatternsproject.core.model.borrow.Borrow;
 import io.github.maciejbiela.designpatternsproject.core.model.borrow.BorrowImpl;
 import io.github.maciejbiela.designpatternsproject.core.repositories.borrow.BorrowsRepository;
+import io.github.maciejbiela.designpatternsproject.core.usecases.borrow.get.all.GetAllBorrowsUseCase;
 import org.junit.Test;
 
 import java.util.List;

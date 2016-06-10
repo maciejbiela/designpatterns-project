@@ -1,8 +1,9 @@
-package io.github.maciejbiela.designpatternsproject.core.usecases.borrower.add;
+package io.github.maciejbiela.designpatternsproject.core.usecasestests.borrower.add;
 
 import io.github.maciejbiela.designpatternsproject.core.model.borrower.Borrower;
 import io.github.maciejbiela.designpatternsproject.core.model.borrower.BorrowerImpl;
 import io.github.maciejbiela.designpatternsproject.core.repositories.borrowers.BorrowersRepository;
+import io.github.maciejbiela.designpatternsproject.core.usecases.borrower.add.AddBorrowerUseCase;
 import org.junit.Test;
 
 import static io.github.maciejbiela.designpatternsproject.core.model.borrower.BorrowerType.INDIVIDUAL;

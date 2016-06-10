@@ -1,8 +1,9 @@
-package io.github.maciejbiela.designpatternsproject.core.usecases.item.get.available;
+package io.github.maciejbiela.designpatternsproject.core.usecasestests.item.get.available;
 
 import io.github.maciejbiela.designpatternsproject.core.model.item.Item;
 import io.github.maciejbiela.designpatternsproject.core.model.item.ItemImpl;
 import io.github.maciejbiela.designpatternsproject.core.repositories.items.ItemsRepository;
+import io.github.maciejbiela.designpatternsproject.core.usecases.item.get.available.GetAvailableItemsUseCase;
 import org.junit.Test;
 
 import java.util.List;
