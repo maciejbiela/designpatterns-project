@@ -1,0 +1,55 @@
+{
+  "id": "439f726e-e43d-71c4-dc78-fcbe89cfbdd2",
+  "name": "Borrows",
+  "description": "",
+  "order": [
+    "ff8cbac0-8a97-b1c7-8869-b32d7e356e41",
+    "ec3ae0ae-b865-df36-7399-ba042c5b572b"
+  ],
+  "folders": [],
+  "timestamp": 1464986006776,
+  "owner": 0,
+  "remoteLink": "",
+  "public": false,
+  "requests": [
+    {
+      "id": "ec3ae0ae-b865-df36-7399-ba042c5b572b",
+      "headers": "",
+      "url": "localhost:8080/borrows/1/return",
+      "preRequestScript": null,
+      "pathVariables": {},
+      "method": "GET",
+      "data": null,
+      "dataMode": "params",
+      "version": 2,
+      "tests": null,
+      "currentHelper": "normal",
+      "helperAttributes": {},
+      "time": 1464994127991,
+      "name": "returnBorrow",
+      "description": "",
+      "collectionId": "439f726e-e43d-71c4-dc78-fcbe89cfbdd2",
+      "responses": []
+    },
+    {
+      "id": "ff8cbac0-8a97-b1c7-8869-b32d7e356e41",
+      "headers": "",
+      "url": "localhost:8080/borrows",
+      "pathVariables": {},
+      "preRequestScript": null,
+      "method": "GET",
+      "collectionId": "439f726e-e43d-71c4-dc78-fcbe89cfbdd2",
+      "data": null,
+      "dataMode": "params",
+      "name": "getAllBorrows",
+      "description": "",
+      "descriptionFormat": "html",
+      "time": 1464986050208,
+      "version": 2,
+      "responses": [],
+      "tests": null,
+      "currentHelper": "normal",
+      "helperAttributes": {}
+    }
+  ]
+}
