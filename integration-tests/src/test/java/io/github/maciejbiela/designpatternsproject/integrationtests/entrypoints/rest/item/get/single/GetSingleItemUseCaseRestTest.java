@@ -23,10 +23,10 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 
 public class GetSingleItemUseCaseRestTest {
 
-    private final long id = 1L;
-    private final String name = "Core Java";
-    private final ItemType type = BOOK;
-    private final boolean available = true;
+    private static final long id = 1L;
+    private static final String name = "Core Java";
+    private static final ItemType type = BOOK;
+    private static final boolean available = true;
 
     private ItemUseCases itemUseCases = mock(ItemUseCases.class);
     private MockMvc mockMvc;
